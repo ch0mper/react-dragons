@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Dragon from './Dragon'
 
 class War extends Component{
 
@@ -7,7 +8,9 @@ class War extends Component{
         return (
             <div style={{float:'left', width:'40%', padding:'5%', backgroundColor:'#f98181'}}>
                 <h1>War</h1>
-                Render Dragons Here
+                {this.props.dragons.map(d => (
+                  <Dragon dragon={d} toggleWar={this.props.goHome} />
+                ))}
             </div>
         )
     }
